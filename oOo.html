@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html ondragstart="return false"oncontextmenu="return false;">
+<head>
+	<title></title>
+	<meta charset="utf-8"/>
+	<meta http-equiv="expires"content="-1">
+	<meta http-equiv="pragma"content="no-cache">
+	<meta http-equiv="X-UA-Compatible"content="IE=edge">
+	<meta http-equiv="Content-Type"content="text/html, charset=UTF-8"/>
+	<meta name="viewport"content="width=device-width, initial-scale=1, maximum-scale=1"/>
+	<link href="https://deathticket.github.io/images.png"rel="icon"type="image/x-icon">
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+			border:none;
+			outline:none;
+			user-select:none;
+			font-family:monospace
+		}
+		body{background:#111}
+		ul{list-style:none;vertical-align:top}
+		p{line-height:0}
+		img{pointer-events:none}
+		.fx2{width:100%}
+
+		#scroll{
+			position:fixed;
+			right:10px;
+			top:50px;
+			padding: 7px 5px;
+			z-index:30;
+			opacity:.1;
+			border-radius:55px;
+			background:rgba(0,0,0,.4);
+			transition-duration:1s
+		}
+		.fx3{
+			height:20px
+		}
+		span{
+			display:block;
+			border:0px solid #727375;
+			transform:rotate(45deg);
+			border-width:0px 2px 2px 0px
+		}
+		.s1{
+			width:10px;
+			height:10px;
+			margin:-5px
+		}
+		.s2{
+			width:5px;
+			height:5px
+		}
+		#up{transform:rotate(180deg)}
+
+		#count{
+			width:17px;
+			height:17px;
+			margin:5px 0 5px;
+			color:#727375;
+			font-size:12px;
+			background:rgba(0,0,0,.9);
+			border-radius: 55px;
+			transition-duration:.8s;
+
+			text-align:center;
+			vertical-align:middle;
+			line-height:17px
+		}
+
+
+		.top_bgm{
+			position:fixed;
+			top:15px;
+			right:10px;
+			z-index:30
+		}
+		.top_bgm button{
+			width:27.84px;
+			height:29px;
+			color:#727375;
+			opacity:.1;
+			background:rgba(0,0,0,.9);
+			cursor:pointer;
+			text-decoration:none;
+			transition-duration:.8s;
+			border-radius:100%;
+
+			text-align:center;
+			vertical-align:middle;
+			line-height:19px
+		}
+		#scroll:hover,#count:hover,.top_bgm button:hover{
+			color:#eee;
+			transition:opacity .8s;
+			opacity:.9
+		}
+		@font-face{font-family:FontAwesome;src:url(https://deathticket.github.io/fontawesome-webfont.ttf)format('truetype');font-weight:normal;font-style:normal}
+		.fa{display:inline-block;font:normal normal normal 14px/1 FontAwesome;font-size:1.2em}
+		.fa-on:before{content:"\f028";color:#0f0}
+		.fa-off:before{content:"\f026"}
+		::-webkit-scrollbar-track,::-webkit-scrollbar-thumb{-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.3);border-radius:55px}
+		::-webkit-scrollbar-track,::-webkit-scrollbar{width:.5em;height:.5em;background-color:#000115}
+		::-webkit-scrollbar-thumb{background-color:#1e82b5}
+		@media only screen and (max-width:720px){::-webkit-scrollbar-track,::-webkit-scrollbar{width:.35em;height:.35em}}
+	</style>
+
+</head>
+<body>
+
+	<div>
+		<div class="top_bgm">
+			<audio id="_audio"src="https://deathticket.github.io/730656_145_1649681401137.mp3"></audio>
+			<button id="_btn"class="fa fa-fw fa-off"onclick="if(_audio.paused){this.classList.remove('fa-off');this.classList.add('fa-on');_audio.play();}else{this.classList.remove('fa-on');this.classList.add('fa-off');_audio.pause();}"></button>
+		</div>
+
+		<center>
+			<ul>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_000.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_001.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_002.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_003.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_004.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_005.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_006.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_007.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_008.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_009.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_010.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_011.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_012.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_013.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_014.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_015.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_016.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_017.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_018.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_019.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_020.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_021.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_022.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_023.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_024.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_025.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_026.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_027.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_028.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_029.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_030.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_031.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_032.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_033.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_034.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_035.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_036.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_037.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_038.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_039.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_040.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_041.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_042.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_043.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_044.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_045.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_046.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_047.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_048.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_049.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_050.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_051.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_052.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_053.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_054.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_055.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_056.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_057.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_058.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_059.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_060.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_061.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_062.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_063.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_064.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_065.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_066.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_067.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_068.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_069.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_070.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_071.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_072.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_073.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_074.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_075.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_076.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_077.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_078.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_079.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_080.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_081.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_082.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_083.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_084.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_085.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_086.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_087.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_088.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_089.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_090.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_091.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_092.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_093.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_094.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_095.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_096.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_097.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_098.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_099.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_100.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_101.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_102.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_103.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_104.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_105.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_106.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_107.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_108.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_109.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_110.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_111.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_112.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_113.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_114.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_115.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_116.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_117.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_118.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_119.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_120.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_121.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_122.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_123.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_124.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_125.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_126.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_127.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_128.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_129.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_130.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_131.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_132.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_133.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_134.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_135.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_136.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_137.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_138.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_139.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_140.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_141.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_142.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_143.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_144.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_145.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_146.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_147.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_148.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_149.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_150.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_151.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_152.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_153.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_154.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_155.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_156.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_157.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_158.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_159.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_160.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_161.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_162.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_163.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_164.jpg" alt=""></p></li>
+				<li><p><img class="fx2" src="https://deathticket.github.io/2195_1/ac3178aadad011cd5df54467a4353b60_165.jpg" alt=""></p></li>
+				
+
+				<!-- <li><p><img class="fx2" src="dWAUVsRA_o.jpg" alt=""></p></li> -->
+			</ul>
+		</center>
+
+		<div id="scroll">
+			<ul>
+				<li>
+					<div class="fx3"id="up"onclick="if(A<5){A+=1;}" onmouseover="oho(0);"onmouseleave="ohl(0);">
+						<center>
+							<span class="s2"></span>
+							<span class="s1"></span>
+						</center>
+					</div>
+				</li>
+				<li><div class="fx3"id="count"onclick="setscroll();">1</div></li>
+				<li>
+					<div class="fx3"id="down"onclick="if(A>1){A-=1;}" onmouseover="oho(1);"onmouseleave="ohl(1);">
+						<center>
+							<span class="s2"></span>
+							<span class="s1"></span>
+						</center>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		var I=window.scrollY,A=1,itv=0,inter=0;
+		function scrollpage(){
+			window.scrollTo(0,I);
+			I+=A;
+			if(I>=document.documentElement.scrollHeight){
+				clearInterval(inter);
+			}
+		}
+		function setscroll(){
+			clearInterval(inter);
+			count.style.color="";
+			if(!itv){
+				inter=setInterval(scrollpage,10);itv=1;
+				count.style.color="#0f0";
+			}
+			else{itv=0;}
+		}
+		function oho(i){
+			document.getElementsByClassName('s1')[i].style="border-color:#eee;";
+			document.getElementsByClassName('s2')[i].style="border-color:#eee;";
+		}
+		function ohl(i){
+			document.getElementsByClassName('s1')[i].style="";
+			document.getElementsByClassName('s2')[i].style="";
+		}
+		(function(){
+			var mouseTimer=null,cursorVisible=true;
+
+			function disappearCursor(){
+				mouseTimer=null;
+				document.body.style.cursor="none";
+				cursorVisible=false;
+			}
+
+			document.onmousemove=function(){
+				if(mouseTimer){
+					window.clearTimeout(mouseTimer);
+				}
+				if(!cursorVisible){
+					document.body.style.cursor="default";
+					cursorVisible=true;
+				}
+				mouseTimer=window.setTimeout(disappearCursor,3000);
+			}
+		})();
+		document.addEventListener('keydown',function(event){
+			if(event.key=="A"){
+				clearInterval(inter);
+				inter=setInterval(scrollpage,20);
+			}
+			else if(event.key=="S"){
+				clearInterval(inter);
+			}
+			else if(event.key=="0"){A=0;}
+			else if(event.key=="1"){A=1;}
+			else if(event.key=="2"){A=2;}
+			else if(event.key=="3"){A=3;}
+			else if(event.key=="4"){A=4;}
+			else if(event.key=="5"){A=5;}
+
+			else if(event.key=="ArrowRight"){if(A<5){A+=1;}}
+			else if(event.key=="ArrowLeft"){if(A>1){A-=1;}}
+		});
+		setInterval(function(){if(_audio.ended){_btn.classList.remove('fa-on');_btn.classList.add('fa-off');}},30);
+		setInterval(function(){count.innerHTML=A;},100);
+		window.addEventListener('scroll',function(){I=window.scrollY;});
+	</script>
+
+</body>
+</html>
