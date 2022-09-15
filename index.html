@@ -1,195 +1,123 @@
 <!DOCTYPE html>
-<html ondragstart="return false"oncontextmenu="return false;">
+<html ondragstart="return false" oncontextmenu="return false;">
 <head>
-	<title></title>
-	<meta charset="utf-8"/>
-	<meta http-equiv="expires"content="-1">
-	<meta http-equiv="pragma"content="no-cache">
-	<meta http-equiv="X-UA-Compatible"content="IE=edge">
-	<meta http-equiv="Content-Type"content="text/html, charset=UTF-8"/>
-	<meta name="viewport"content="width=device-width, initial-scale=1, maximum-scale=1"/>
-	<link href="images.png"rel="icon"type="image/x-icon">
-	<style type="text/css">
-		*{
-			margin:0;
-			padding:0;
-			border:none;
-			outline:none;
-			user-select:none;
-			font-family:monospace
-		}
-		body{background:#111}
-		ul{list-style:none;vertical-align:top}
-		p{line-height:0}
-		img{width:100%;pointer-events:none}
+    <title>Death Ticket</title>
+    <meta charset="utf-8"/>
+    <meta http-equiv="expires"content="-1">
+    <meta http-equiv="pragma"content="no-cache">
+    <meta http-equiv="X-UA-Compatible"content="IE=edge">
+    <meta http-equiv="Content-Type"content="text/html, charset=UTF-8"/>
+    <meta name="viewport"content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <meta name="description" content="Read Manhwa">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="DeathTicket">
+    <meta property="og:description" content="Read Manhwa">
+    <meta property="og:url" content="https://deathticket.github.io/">
+    <meta property="og:site_name" content="DeathTicket">
+    <link href="images.png"rel="icon"type="image/x-icon">
+    <style type="text/css">
+        *{
+            margin:0;
+            padding:0;
+            border:none;
+            color:#dddddd;
+            outline:none;
+            user-select:none;
+            font-family:monospace
+        }
+        body {
+            background: #37474F;
+            padding: 50px 0px;
+        }
+        .vertical-form legend {
+            width: auto;
+            font-size: 22px;
+            color: #42BEB1;
+            font-weight: 500;
+            text-align: center;
+            margin-bottom: 30px;
+        }
 
-		.fx1{
-			position:fixed;
-			right:10px;
-			z-index:30;
-			opacity:.1;
-			border:0;
-			border-radius:55px;
-			transition-duration:1s
-		}
-		#top_bgm{
-			top:15px;
-		}
-		#top_bgm button{
-			width:27.84px;
-			height:29px;
-			color:#ccc;
-			text-align:center;
-			vertical-align:middle;
-			line-height:19px;
-			cursor:pointer;
-			text-decoration:none;
-			border-radius:100%;
-			background:rgba(0,0,0,1);
-		}
-		.fx1:hover{
-			transition:opacity 1s;
-			opacity:.9
-		}
+        #listChap{
+            bottom:10px;
+            padding: 5px 10px;
+            background:rgba(0,0,0,.7);
+        }
+        #listChap span{
+            position: absolute;
+            display:block;
+            border:0px solid #626365;
+            transform:rotate(45deg);
+            border-width:2px 2px 0px 0px
+        }
+        #listChap span.s1{
+            width:10px;
+            height:10px;
+            margin:-5px
+        }
+        #listChap span.s2{
+            width:5px;
+            height:5px
+            margin:-5px
+        }
 
+        select#tools-selector {
+            display: block;
+            padding:5px 10px;
+            color: #ccc;
+            font-size: 14px;
+            border: 0;
+            border-radius: 25px;
+            cursor: pointer;
+            background:#000;
+            -webkit-appearance:none;
+        }
+        option {
+            padding: 5px;
+            line-height: 20px;
+        }
 
-		@font-face{font-family:FontAwesome;src:url(fontawesome-webfont.ttf)format('truetype');font-weight:normal;font-style:normal}
-		.fa{display:inline-block;font:normal normal normal 14px/1 FontAwesome;font-size:1.2em}
-		.fa-on:before{content:"\f028";color:#0f0}
-		.fa-off:before{content:"\f026"}
-
-		::-webkit-scrollbar-track,::-webkit-scrollbar-thumb{-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.3);border-radius:55px}
-		::-webkit-scrollbar-track,::-webkit-scrollbar{width:.75em;height:.75em;background-color:#000115}
-		::-webkit-scrollbar-thumb{background-color:#11d912}
-		@media only screen and (max-width:720px){::-webkit-scrollbar-track,::-webkit-scrollbar{width:.333em;height:.333em}}
-	</style>
+        ::-webkit-scrollbar-track,::-webkit-scrollbar-thumb{-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.3);border-radius:55px}
+        ::-webkit-scrollbar-track,::-webkit-scrollbar{width:.75em;height:.75em;background-color:#000115}
+        ::-webkit-scrollbar-thumb{background-color:#11d912}
+        @media only screen and (max-width:720px){::-webkit-scrollbar-track,::-webkit-scrollbar{width:.333em;height:.333em}}
+    </style>
 
 </head>
 <body>
 
-	<div>
-		<div id="top_bgm" class="fx1">
-			<audio id="_audio"src="730656_145_1649681401137.mp3"></audio>
-			<button id="_btn"class="fa fa-fw fa-off"></button>
-		</div>
+    <div class="vertical-form">
+        <legend class="legend">
+            <img class="logo" src="bx118769-105GWeG7vzOy.jpg" style="width:200px;margin-bottom: 5px;"/>
+            <p>Death Ticket</p>
+        </legend>
 
-		<center>
-			<ul>
-				<li><p><img src="https://i.postimg.cc/qvYq3HH6/f2b29962e0578b6e684e477dee53daed-001.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/4dR3WvdJ/f2b29962e0578b6e684e477dee53daed-002.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/Y0pCHpYZ/f2b29962e0578b6e684e477dee53daed-003.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/j2ZdqGh5/f2b29962e0578b6e684e477dee53daed-004.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/15b10m4S/f2b29962e0578b6e684e477dee53daed-005.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/HLHK3Vgq/f2b29962e0578b6e684e477dee53daed-006.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/76hKQzQW/f2b29962e0578b6e684e477dee53daed-007.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/d1hzZgv3/f2b29962e0578b6e684e477dee53daed-008.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/MKSFzncv/f2b29962e0578b6e684e477dee53daed-009.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/j5y41h4v/f2b29962e0578b6e684e477dee53daed-010.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/7Yt0mcyw/f2b29962e0578b6e684e477dee53daed-011.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/hjMfhzDc/f2b29962e0578b6e684e477dee53daed-012.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/cJBJ5g8w/f2b29962e0578b6e684e477dee53daed-013.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/mgQZtzjJ/f2b29962e0578b6e684e477dee53daed-014.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/zG18ZDNj/f2b29962e0578b6e684e477dee53daed-015.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/CM3z5gYZ/f2b29962e0578b6e684e477dee53daed-016.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/Wbc1jw6g/f2b29962e0578b6e684e477dee53daed-017.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/kXCqLXqy/f2b29962e0578b6e684e477dee53daed-018.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/nLy670L1/f2b29962e0578b6e684e477dee53daed-019.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/LXFbh5yC/f2b29962e0578b6e684e477dee53daed-020.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/QN0fZfrn/f2b29962e0578b6e684e477dee53daed-021.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/PxdQBwVj/f2b29962e0578b6e684e477dee53daed-022.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/1RjDK2SP/f2b29962e0578b6e684e477dee53daed-023.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/DZzbrdY8/f2b29962e0578b6e684e477dee53daed-024.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/g2PNPj0N/f2b29962e0578b6e684e477dee53daed-025.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/CxYHQ2v2/f2b29962e0578b6e684e477dee53daed-026.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/HLNMdv2d/f2b29962e0578b6e684e477dee53daed-027.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/Jhsy6cWg/f2b29962e0578b6e684e477dee53daed-028.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/MpFHQMjY/f2b29962e0578b6e684e477dee53daed-029.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/XqL77pbd/f2b29962e0578b6e684e477dee53daed-030.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/cJ3xtDWs/f2b29962e0578b6e684e477dee53daed-031.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/ydBHgsnP/f2b29962e0578b6e684e477dee53daed-032.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/V643JMJf/f2b29962e0578b6e684e477dee53daed-033.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/mkt6hnxj/f2b29962e0578b6e684e477dee53daed-034.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/4x5MLV1z/f2b29962e0578b6e684e477dee53daed-035.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/kgXw5Zxb/f2b29962e0578b6e684e477dee53daed-036.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/R0J76zqN/f2b29962e0578b6e684e477dee53daed-037.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/vZggXtyK/f2b29962e0578b6e684e477dee53daed-038.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/GhZh3w0M/f2b29962e0578b6e684e477dee53daed-039.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/L8tRHJ3X/f2b29962e0578b6e684e477dee53daed-040.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/pTpLX2d6/f2b29962e0578b6e684e477dee53daed-041.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/JnDRCP6w/f2b29962e0578b6e684e477dee53daed-042.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/nzDfPMrp/f2b29962e0578b6e684e477dee53daed-043.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/63RFhSbQ/f2b29962e0578b6e684e477dee53daed-044.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/gJvBhhrX/f2b29962e0578b6e684e477dee53daed-045.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/gcsgPmhW/f2b29962e0578b6e684e477dee53daed-046.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/x8pGNjGN/f2b29962e0578b6e684e477dee53daed-047.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/NFnTfJY1/f2b29962e0578b6e684e477dee53daed-048.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/MZLjBL2B/f2b29962e0578b6e684e477dee53daed-049.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/pdVDCn05/f2b29962e0578b6e684e477dee53daed-050.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/ry4tSJ8Y/f2b29962e0578b6e684e477dee53daed-051.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/y88drXHK/f2b29962e0578b6e684e477dee53daed-052.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/vZKQqJh7/f2b29962e0578b6e684e477dee53daed-053.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/sfJ3dQKg/f2b29962e0578b6e684e477dee53daed-054.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/9MhHsC79/f2b29962e0578b6e684e477dee53daed-055.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/yx64YjnY/f2b29962e0578b6e684e477dee53daed-056.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/c4HypDrF/f2b29962e0578b6e684e477dee53daed-057.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/0yKgQbGm/f2b29962e0578b6e684e477dee53daed-058.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/R0wj7yDZ/f2b29962e0578b6e684e477dee53daed-059.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/J4tv6G2g/f2b29962e0578b6e684e477dee53daed-060.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/FKX6HGH5/f2b29962e0578b6e684e477dee53daed-061.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/pT21DTjs/f2b29962e0578b6e684e477dee53daed-062.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/k4fYwmFq/f2b29962e0578b6e684e477dee53daed-063.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/mknXfy5n/f2b29962e0578b6e684e477dee53daed-064.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/Jn6KZQMh/f2b29962e0578b6e684e477dee53daed-065.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/HWNBL36Z/f2b29962e0578b6e684e477dee53daed-066.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/13hBGXhD/f2b29962e0578b6e684e477dee53daed-067.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/KzzDGgBh/f2b29962e0578b6e684e477dee53daed-068.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/cCt7YyFD/f2b29962e0578b6e684e477dee53daed-069.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/c1vPTvjz/f2b29962e0578b6e684e477dee53daed-070.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/J4JvV9Rc/f2b29962e0578b6e684e477dee53daed-071.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/DzfMG0LB/f2b29962e0578b6e684e477dee53daed-072.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/nLL3z5fW/f2b29962e0578b6e684e477dee53daed-073.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/V6r49C6B/f2b29962e0578b6e684e477dee53daed-074.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/cHphFLtq/f2b29962e0578b6e684e477dee53daed-075.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/Bb2gkf2j/f2b29962e0578b6e684e477dee53daed-076.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/yYXjTBV5/f2b29962e0578b6e684e477dee53daed-077.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/50CqQW7s/f2b29962e0578b6e684e477dee53daed-078.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/q792TZJy/f2b29962e0578b6e684e477dee53daed-079.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/yNSSvXmd/f2b29962e0578b6e684e477dee53daed-080.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/4y8dJm6q/f2b29962e0578b6e684e477dee53daed-081.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/15fRGRcR/f2b29962e0578b6e684e477dee53daed-082.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/yNBzb79Z/f2b29962e0578b6e684e477dee53daed-083.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/9Q2WvPH0/f2b29962e0578b6e684e477dee53daed-084.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/Z5JSfT6y/f2b29962e0578b6e684e477dee53daed-085.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/Z5bG8wh8/f2b29962e0578b6e684e477dee53daed-086.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/brPCzvyx/f2b29962e0578b6e684e477dee53daed-087.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/xTT5ghc1/f2b29962e0578b6e684e477dee53daed-088.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/PJFwS6RC/f2b29962e0578b6e684e477dee53daed-089.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/8zL7vPNJ/f2b29962e0578b6e684e477dee53daed-090.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/JnFrg9RC/f2b29962e0578b6e684e477dee53daed-091.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/SKsjvLc8/f2b29962e0578b6e684e477dee53daed-092.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/437scWz8/f2b29962e0578b6e684e477dee53daed-093.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/qMvfnmr8/f2b29962e0578b6e684e477dee53daed-094.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/3wMbL1sf/f2b29962e0578b6e684e477dee53daed-095.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/qqYGNM0D/f2b29962e0578b6e684e477dee53daed-096.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/L61tySmR/f2b29962e0578b6e684e477dee53daed-097.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/RhfTnxFM/f2b29962e0578b6e684e477dee53daed-098.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/8PSRn3c6/f2b29962e0578b6e684e477dee53daed-099.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/x1FbYFfg/f2b29962e0578b6e684e477dee53daed-100.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/VLZNbrxk/f2b29962e0578b6e684e477dee53daed-101.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/NMbtqZYj/f2b29962e0578b6e684e477dee53daed-102.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/Vv5xy6DK/f2b29962e0578b6e684e477dee53daed-103.jpg" alt=""></p></li>
-				<li><p><img src="https://i.postimg.cc/904n8kQS/f2b29962e0578b6e684e477dee53daed-104.jpg" alt=""></p></li>
-			</ul>
-		</center>
-	</div>
+        <center>
+            <select name="chapter" id="tools-selector" onchange="this.options[this.selectedIndex].value&amp;&amp;window.open(this.options[this.selectedIndex].value,'_self')">
+                <option value="" disabled="disabled" style="color:gray;">Select Chapter</option>
+            </select>
+        </center>
+    </div>
 
-	<script type="text/javascript">
-		_btn.addEventListener('click', function() {
-			if(_audio.paused){_btn.classList.remove('fa-off');_btn.classList.add('fa-on');_audio.play();}
-			else{_btn.classList.remove('fa-on');_btn.classList.add('fa-off');_audio.pause();}
-		});
-		setInterval(function(){if(_audio.ended){_btn.classList.remove('fa-on');_btn.classList.add('fa-off');}},30);
-	</script>
+    <script type="text/javascript" src="urlimageList.js"></script>
+    <script type="text/javascript">
+        function main() {
+            for (var i=urlimageList.length-1; i>=0; i--) {
+                add_option(document.getElementById("tools-selector"), urlimageList[i]);
+            };
+        };
+
+        function add_option(from, value) {
+            var option  = document.createElement("option");
+            option.text = "Chapter "+value.toString().padStart(3, ' ');
+            option.value = 'https://deathticket.github.io/730656_'+value+'.html';
+            option.rel = "nofollow";
+            from.add(option);
+        };
+
+        main();
+    </script>
 
 </body>
 </html>
