@@ -13,7 +13,6 @@ img{width:100%;pointer-events:none}
 
 .fx1{
     position:fixed;
-    right:10px;
     z-index:30;
     opacity:.1;
     border:0;
@@ -22,6 +21,7 @@ img{width:100%;pointer-events:none}
 }
 #top_bgm{
     top:15px;
+    right:10px;
 }
 #top_bgm button{
     width:27px;
@@ -36,7 +36,8 @@ img{width:100%;pointer-events:none}
     background:rgba(0,0,0,1);
 }
 #listChap{
-    bottom:10px;
+    top:15px;
+    left:10px;
     padding: 5px 10px;
     background:rgba(0,0,0,.7);
 }
