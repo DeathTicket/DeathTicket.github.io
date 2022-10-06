@@ -6,13 +6,13 @@
     user-select:none;
     font-family:monospace
 }
-body{background: #37474F;}
+body {background: #37474F}
 ul{list-style:none;vertical-align:top}
-li{min-height:690px;}
+/*li{min-height:690px;}*/
 p{line-height:0}
 img{width:100%;pointer-events:none}
 
-.fx1{
+.fx1 {
     position:fixed;
     z-index:30;
     opacity:.1;
@@ -20,11 +20,38 @@ img{width:100%;pointer-events:none}
     border-radius:55px;
     transition-duration:1s
 }
-#top_bgm{
-    top:15px;
-    right:10px;
+.fx1:hover {
+    transition:opacity 1s;
+    opacity:1
 }
-#top_bgm button{
+
+.listChap {
+    top:15px;
+    left:10px;
+    padding: 5px 10px;
+    background:rgba(0,0,0,.7);
+}
+select#tools-selector {
+    display: block;
+    padding:5px 10px;
+    color: #ccc;
+    font-size: 1em;
+    border: 0;
+    border-radius: 25px;
+    cursor: pointer;
+    background:#000;
+    -webkit-appearance:none;
+}
+option {
+    padding: 5px;
+    line-height: 20px;
+}
+
+#top_bgm {
+    top:15px;
+    right:10px
+}
+#top_bgm button {
     width:27px;
     height:27px;
     color:#ccc;
@@ -34,39 +61,13 @@ img{width:100%;pointer-events:none}
     cursor:pointer;
     text-decoration:none;
     border-radius:100%;
-    background:rgba(0,0,0,1);
-}
-#listChap{
-    top:15px;
-    left:10px;
-    padding: 5px 10px;
-    background:rgba(0,0,0,.7);
+    background:rgba(0,0,0,1)
 }
 
-select#tools-selector {
-    display:block;
-    padding:5px 10px;
-    color:#ccc;
-    font-size:1em;
-    border:0;
-    border-radius:25px;
-    cursor:pointer;
-    background:#000;
-    -webkit-appearance:none;
-}
-option {
-    padding:5px;
-    line-height:20px;
-}
-.fx1:hover{
-    transition:opacity 1s;
-    opacity:1
-}
 a{color: #ddd;}
 a.disabled {cursor: default;color: #555;pointer-events: none;}
 a[rel=prev] {margin-right: 10px;}
 a[rel=next] {margin-left: 10px;}
-
 
 @font-face{font-family:FontAwesome;src:url(fontawesome-webfont.ttf)format('truetype');font-weight:normal;font-style:normal}
 .fa{display:inline-block;font:normal normal normal 14px/1 FontAwesome;font-size:1em}
