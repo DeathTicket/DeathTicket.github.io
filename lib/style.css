@@ -20,12 +20,8 @@ img{width:100%;pointer-events:none}
     border-radius:55px;
     transition-duration:1s
 }
-.fx1:hover {
-    transition:opacity 1s;
-    opacity:1
-}
 
-.listChap {
+#listChap {
     top:15px;
     left:10px;
     padding: 5px 10px;
