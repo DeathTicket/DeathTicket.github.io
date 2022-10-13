@@ -8,26 +8,31 @@
 }
 body {background: #37474F}
 ul{list-style:none;vertical-align:top}
-li{min-height:690px;}
+/*li{min-height:690px;}*/
 p{line-height:0}
 img{width:100%;pointer-events:none}
+img[src='lib/404.jpeg'] {
+    border: 0px solid purple;
+    border-width: 5px 0px;
+    pointer-events: all;
+}
 
 .fx1 {
     position:fixed;
     z-index:30;
-    opacity:.1;
+    /*opacity:.1;*/
     border:0;
     border-radius:55px;
     transition-duration:1s
 }
 
 #listChap {
-    top:15px;
+    top:10px;
     left:10px;
-    padding: 5px 10px;
+    padding:5px 10px;
     background:rgba(0,0,0,.7);
 }
-select#tools-selector {
+select {
     display: block;
     padding:5px 10px;
     color: #ccc;
@@ -43,9 +48,29 @@ option {
     line-height: 20px;
 }
 
+#up {
+    top:15px;
+    left:210px;
+    /*padding: 5px;*/
+    background:rgba(0,0,0,.7);
+}
+#up button{
+    width:27px;
+    height:27px;
+    color:#ccc;
+    text-align:center;
+    vertical-align:middle;
+    line-height:17px;
+    cursor:pointer;
+    text-decoration:none;
+    border-radius:100%;
+    background:rgba(0,0,0,1)
+}
+
+
 #top_bgm {
     top:15px;
-    right:10px
+    right:15px
 }
 #top_bgm button {
     width:27px;
@@ -70,8 +95,14 @@ a[rel=next] {margin-left: 10px;}
 .fas{line-height: 29px;font-weight: 900;font:normal normal normal 14px/1 FontAwesome;-webkit-font-smoothing: antialiased;display: inline-block;font-style: normal;font-variant: normal;text-rendering: auto;line-height: 1;}
 .fa-on:before{content:"\f028";color:#0f0}
 .fa-off:before{content:"\f026"}
+
+.fa-caret-left:before {content: "\f0d9";}
+.fa-caret-right:before {content: "\f0da";}
 .fa-arrow-left:before {content: "\f060";}
 .fa-arrow-right:before {content: "\f061";}
+.fa-arrow-up:before {content: "\f062";}
+.fa-arrow-down:before {content: "\f063";}
+.fa-refresh:before {content: "\f021";}
 
 ::-webkit-scrollbar-track,::-webkit-scrollbar-thumb{-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.3);border-radius:55px}
 ::-webkit-scrollbar-track,::-webkit-scrollbar{width:.75em;height:.75em;background-color:#000115}
