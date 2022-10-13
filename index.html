@@ -38,7 +38,7 @@
                             </a>
                         </td>
                         <td>
-                            <select name="chapter" id="tools-selector" onchange="this.options[this.selectedIndex].value&amp;&amp;window.scrollTo(0, 1);setCookie('currentTimeAudio', 0);setCookie('chapter', this.options[this.selectedIndex].value);window.location.reload();">
+                            <select name="chapter" id="tools-selector" onchange="this.options[this.selectedIndex].value&amp;&amp;window.scrollTo(0, 1);setCookie('currentTimeAudio', 0);setCookie('scroll', 5);setCookie('chapter', this.options[this.selectedIndex].value);window.location.reload();">
                                 <option value="" disabled="disabled" style="color:gray;" selected>Select Chapter</option>
                             </select>
                         </td>
@@ -50,6 +50,10 @@
                     </tr>
                 </table>
             </center>
+        </div>
+
+        <div id="up" class="fx1">
+            <button class="fas fa-arrow-up" onclick="window.scrollTo(0, 1);"></button>
         </div>
 
         <div id="top_bgm" class="fx1" style="display: none;">
