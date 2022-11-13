@@ -25,6 +25,7 @@ img[src='lib/404.jpeg'] {
     border-radius:55px;
     transition-duration:1s
 }
+.d0 {display:none;}
 
 #listChap {
     top:10px;
