@@ -70,7 +70,8 @@ option {
 
 #top_bgm {
     top:15px;
-    right:15px
+    right:15px;
+    display: none;
 }
 #top_bgm button {
     width:27px;
